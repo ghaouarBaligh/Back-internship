@@ -11,7 +11,7 @@ module.exports = Video;*/
 const mongoose = require('mongoose');
 
 const Video = mongoose.model('Video',{
-  id_user: { type: String},  // Référence à l'utilisateur qui a uploadé la vidéo
+  id_user: { type: String}, 
   name: { type: String},  // Nom de la vidéo
   //uploadDate: { type: Date, default: Date.now },  // Date de l'upload
   video:{ type:String}
