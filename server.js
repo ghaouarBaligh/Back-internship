@@ -13,6 +13,7 @@ app.use('/upload', VideoRoute);
 
 app.use('/getupload',express.static('./uploads'))
 
-app.listen(3000,()=>{
+const PORT = process.env.PORT || 3000
+app.listen(PORT,()=>{
     console.log('server work');
 });
