@@ -15,5 +15,5 @@ app.use('/getupload',express.static('./uploads'))
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT,()=>{
-    console.log('server work');
+    console.log('server work !');
 });
