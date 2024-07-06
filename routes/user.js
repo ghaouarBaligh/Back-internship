@@ -5,10 +5,13 @@ const User = require('../models/user.js');
 const jwt = require('jsonwebtoken')
 const multer = require('multer');
 const nodemailer = require('nodemailer');
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 const crypto = require('crypto');
 
 
+console.log('EMAIL:', process.env.EMAIL);
+console.log('EMAIL_PASSWORD:', process.env.EMAIL_PASSWORD);
 
 router.post('/register',async(req,res)=>{
 
@@ -60,8 +63,8 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     secure: true,
     auth: {
-        user: "balighghaouar@gmail.com",
-        pass: "niat awok ilma rngb"
+        user: process.env.EMAIL,
+        pass: process.env.EMAIL_PASSWORD
     }
 });
 router.post('/forget-password', async (req, res) => {

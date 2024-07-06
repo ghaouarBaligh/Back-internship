@@ -211,6 +211,16 @@ router.delete('/deleteVideobyid/:id',async(req,res)=>{
   }
 })
 
+router.get('/getAllVideos',async(req,res)=>{
+  try{
+      vid= await Video.find();
+      res.status(200).send(vid)
+  }catch(error){
+      res.status(400).send(error)
+  }
+})
+
+
 router.get('/getVideobyid/:id',async(req,res)=>{
   try{
       myid= req.params.id

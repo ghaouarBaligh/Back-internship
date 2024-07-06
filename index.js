@@ -1,8 +1,9 @@
 const express = require('express');
-const UserRoute = require('./routes/user');
+const UserRoute = require('./routes/user.js');
 const VideoRoute = require('./routes/video.js');
-require('./config/connect');
-
+require('./config/connect.js');
+const dotenv = require('dotenv');
+dotenv.config();
 const app = express();
 app.use(express.json())
 
