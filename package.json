@@ -1,4 +1,14 @@
 {
+
+  
+  "scripts": {
+    "start": "node index.js"  
+  },
+
+  "engines": {
+    "node": "20.15.0"
+  },
+
   "dependencies": {
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
