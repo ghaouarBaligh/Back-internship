@@ -211,15 +211,28 @@ router.delete('/deleteVideobyid/:id',async(req,res)=>{
   }
 })
 
-router.get('/getAllVideos',async(req,res)=>{
+/*router.get('/getAllVideos',async(req,res)=>{
   try{
       vid= await Video.find();
       res.status(200).send(vid)
   }catch(error){
       res.status(400).send(error)
   }
-})
+})*/
 
+router.get('/getAllVideos', async (req, res) => {
+  try {
+    const videos = [
+      { title: 'Video 1', description: 'Description for Video 1' },
+      { title: 'Video 2', description: 'Description for Video 2' },
+      { title: 'Video 3', description: 'Description for Video 3' }
+    ];
+
+    res.status(200).json(videos);
+  } catch (error) {
+    res.status(400).json({ error: 'Failed to fetch videos' });
+  }
+});
 
 router.get('/getVideobyid/:id',async(req,res)=>{
   try{
