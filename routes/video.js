@@ -256,4 +256,34 @@ router.put('/updateVideo/:id',async(req,res)=>{
 
 })
  
+filename2 = '';
+
+const mystorage = multer.diskStorage({
+  destination: './uploads',
+  filename: (req, file, redirect)=>{
+    let date = Date.now();
+    let fl = date + '.' + file.mimetype.split('/')[1];
+    redirect(null , fl);
+    filename2=fl;
+  }
+})
+
+const upload1 = multer({storage: mystorage})
+
+router.post('/createPhoto',upload1.any('image'),async(req,res)=>{
+  try{
+    data = req.body;
+    img= new Video(data);
+    img.image = filename;
+    savedImage = await img.save();
+    filename='';
+    res.status(200).send(savedImage)
+
+} catch(error){
+    res.status(400).send(error)
+}
+})
+
+
+
 module.exports = router;
