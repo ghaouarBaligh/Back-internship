@@ -259,7 +259,7 @@ router.put('/updateVideo/:id',async(req,res)=>{
 filename2 = '';
 
 const mystorage = multer.diskStorage({
-  destination: './uploads',
+  destination: '/tmp/uploads',
   filename: (req, file, redirect)=>{
     let date = Date.now();
     let fl = date + '.' + file.mimetype.split('/')[1];
