@@ -10,8 +10,8 @@ dotenv.config();
 const crypto = require('crypto');
 
 
-console.log('EMAIL:', 'balighghaouar@gmail.com');
-console.log('EMAIL_PASSWORD:', 'niat awok ilma rngb');
+console.log('EMAIL:', process.env.EMAIL);
+console.log('EMAIL_PASSWORD:', process.env.EMAIL_PASSWORD);
 
 router.post('/register',async(req,res)=>{
 
